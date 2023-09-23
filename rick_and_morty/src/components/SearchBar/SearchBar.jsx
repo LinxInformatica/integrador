@@ -10,24 +10,30 @@ export default function SearchBar({onSearch,onRandom}) {
       setId(event.target.value);
    }
 
+   const clickSearch = () => {
+      onSearch(id);
+      setId("");
+
+   }
+
    return (
-      <div className={styles.SearchBar}>
-         
-         <input name='search' 
-             type='search' 
-             onChange={handleChange}
-             value={id}>
-         </input>
+      <nav className={styles.SearchBar}>
+         <div>
+            <input name='search' 
+               type='search' 
+               onChange={handleChange}
+               value={id}>
+            </input>
 
-         <button name='button' 
-             type='button'
-             onClick={() => onSearch(id)}>Agregar
-         </button>
-         <button name='random' 
-             type='button'
-             onClick={() => onRandom()}>Random
-         </button>
-
-      </div>   
+            <button name='button' 
+               type='button'
+               onClick={() => clickSearch()}>Agregar
+            </button>
+            <button name='random' 
+               type='button'
+               onClick={() => onRandom()}>Random
+            </button>
+         </div>
+      </nav>   
    );
 }

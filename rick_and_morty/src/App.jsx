@@ -1,12 +1,20 @@
 import './App.css';
+import axios from 'axios';
+
 import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav/Nav.jsx';
+import Detail from './components/Detail/Detail.jsx'
+import About from './components/About/About.jsx'
+
+import SITEROUTES from './helpers/routes.helpers'
+
+import { Routes, Route } from 'react-router-dom';
 
 import { useState } from 'react';
 
 export default function App() {
    const TOTALCHARACTERS = 826;
-   const URLAPI = 'https://rickandmortyapi.com/api/character/'
+   const URLAPI = `${SITEROUTES.URL}/character/`
 
    const [characters, setCharacters] = useState([]);
 
@@ -31,12 +39,12 @@ export default function App() {
       }
    }
 
-   const randomId = () => Math.floor(Math.random() * (TOTALCHARACTERS+2)); 
+   const randomId = () => Math.floor(Math.random() * (TOTALCHARACTERS + 2));
 
    const onRandom = () => {
 
       if (characters.length === TOTALCHARACTERS) {
-         window.alert('No quedan mas personaes para seleccionar')
+         window.alert('No quedan mas personajes para seleccionar')
          return
       }
       let id = randomId();
@@ -54,8 +62,15 @@ export default function App() {
    }
    return (
       <div className='App'>
-         <Nav onSearch={onSearch} onRandom={onRandom}/>
-         <Cards characters={characters} onClose={onClose} />
+         {console.log(SITEROUTES)}
+         <div>
+            <Nav onSearch={onSearch} onRandom={onRandom}/>
+         </div>
+         <Routes>
+            <Route path={SITEROUTES.HOME} element={<Cards characters={characters} onClose={onClose}/>} />
+            <Route path={SITEROUTES.ABOUT} element={<About />} />
+            <Route path={SITEROUTES.DETAIL} element={<Detail />} />
+         </Routes>
       </div>
    );
 };
