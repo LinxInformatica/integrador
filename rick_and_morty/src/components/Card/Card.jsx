@@ -10,31 +10,23 @@ export default function Card(props) {
             <button className={styles.buttonCard} onClick={() => onClose(id)}>X</button>
          </div>
          <Link to={`/detail/${id}`} >
-          
-         <div className={styles.name}>
+
+            <div className={styles.name}>
                {name}
-          
-         </div>
+
+            </div>
+            <div className={styles.img}>
+               <img src={image} alt='{image}' />
+            </div>
+            <div className={styles.name}>
+               <div>
+                  {status}
+               </div>
+               <div>
+                  {species}
+               </div>
+            </div>   
          </Link>
-         <div className={styles.img}>
-            <img src={image} alt='{image}' />
-         </div>
-         <div className={styles.data}>
-            <div>
-               {status}
-            </div>
-            <div>
-               {species}
-            </div>
-            {/* <div>
-               {gender}
-            </div>
-            <div>
-               {origin}
-            </div> */}
-
-         </div>
-
       </div>
    );
 }

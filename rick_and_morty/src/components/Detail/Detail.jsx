@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import SITEROUTES from "../../helpers/routes.helpers";
 
@@ -26,29 +26,33 @@ export default function Detail() {
    }, [id]);
 
    return (
-      <div>
+      <div >
          {character.name && (
             <Link to={SITEROUTES.HOME}>
                <div className={styles.Detail}>
                   <div className={styles.img}>
                      <img src={character.image} alt='{image}' />
                   </div>
-                  <div>
-                     <div>
+                  <div classname={styles.data}>
+                     <div>Nombre:
+                        {character.name}
+                     </div>
+                     <div>Estado:
                         {character.status}
                      </div>
-                     <div>
+                     <div>Especie:
                         {character.species}
                      </div>
-                     <div>
+                     <div>Genero:
                         {character.gender}
                      </div>
-                     <div>
+                     <div>Origen:
                         {character.origin.name}
                      </div>
                   </div>
                </div>
             </Link>
+
          )}
       </div>
    );
