@@ -1,7 +1,8 @@
  const SITEROUTES = {
     URL: 'https://rickandmortyapi.com/api',
-    HOME: '/',
+    HOME: '/home',
     ABOUT: '/about',
-    DETAIL: '/detail/:id'
+    DETAIL: '/detail/:id',
+    FORM: '/'
 };
 export default SITEROUTES

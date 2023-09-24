@@ -29,31 +29,6 @@ $OverColor : black;
 }
 
 .Nav img {
-
     height: 30px;
 }
 
-.Nav button {
-    @include formatoBase;
-    font-size: .8em;
-    font-weight: 500;
-    font-family: inherit;
-    cursor: pointer;
-    transition: 300ms ease-in-out;
-    border: 1px solid white;
-    height: 40px;
-    // border: 1px;
-
-}
-
-.Nav button:hover {
-    border: 1px solid $OverColor;
-    transform: scale(1.15);
-}
-
-.Nav button:focus {
-    color: $nameColor;
-    transform: scale(1.05);
-    box-shadow: 2px 2px 25px #969696,
-        -2px -2px 25px #ffffff;
-}

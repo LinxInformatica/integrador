@@ -1,10 +1,11 @@
 import SearchBar from '../SearchBar/SearchBar.jsx';
 import styles from '../Nav/Nav.module.scss'
+import SITEROUTES from '../../helpers/siteroutes.helpers.jsx';
 
 import { Link } from 'react-router-dom';
 
 export default function Nav(props) {
-   const { onSearch, onRandom } = props;
+   const { onSearch, onRandom ,logout} = props;
 
    return (
       <nav className={styles.Nav}>
@@ -15,12 +16,13 @@ export default function Nav(props) {
             <SearchBar onSearch={onSearch} onRandom={onRandom} />
          </div>   
          <div>
-            <Link to="/">
+            <Link to={SITEROUTES.HOME}>
                <button>Home</button>
             </Link>
-            <Link to="/about">
+            <Link to={SITEROUTES.ABOUT}>
                <button>About</button>
             </Link>
+            <button onClick={logout}>Logout</button>
          </div>
       </nav>
    );

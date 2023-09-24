@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import SITEROUTES from "../../helpers/routes.helpers";
+import SITEROUTES from "../../helpers/siteroutes.helpers";
 
 import styles from "../Detail/Detail.module.scss"
 
