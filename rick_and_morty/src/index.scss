@@ -68,6 +68,7 @@ button {
   transition: 300ms ease-in-out;
   border: 1px solid white;
   height: 40px;
+  color:$nameColor;
   // border: 1px;
 
 }
@@ -82,6 +83,10 @@ button:focus {
   transform: scale(1.05);
   box-shadow: 2px 2px 25px #969696,
       -2px -2px 25px #ffffff;
+}
+
+label {
+  color:$nameColor;
 }
 
 // @media (prefers-color-scheme: light) {

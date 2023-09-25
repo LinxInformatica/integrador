@@ -2,31 +2,34 @@ import React from 'react'
 import REXPRESSIONS from '../../helpers/rexpressions.helpers'
 
 const validation = (userData, errors, setErrors) => {
+    const newErrors={...errors}
+
     // validar email
     if (!userData.email) {
-        setErrors({ ...errors, email: 'El email esta vacio' });
+        newErrors.email='Ingrese el Mail';
     } else {
         if (!REXPRESSIONS.MAIL.test(userData.email)) {
-            setErrors({ ...errors, email: 'El email no es valido' });
+            newErrors.email= 'El email no es valido';
         } else {
             if (userData.email.length > 35) {
-                setErrors({ ...errors, email: 'El email no debe exceder los 35 caracteres' });
-            } else setErrors({ ...errors, email: '' });
+                newErrors.email='El email no debe exceder los 35 caracteres' ;
+            } else newErrors.email='' ;
         }
     }
-
-    // validar password
+    //validar password
     if (!userData.password) {
-        setErrors({ ...errors, password: 'La contraseña esta vacia' });
+        newErrors.password='Ingrese la Contraseña' ;
     } else {
         if (userData.password.length < 6 || userData.password.length > 10) {
-            setErrors({ ...errors, password: 'La contraseña debe tner entre 6 y 10 caracteres' });
+            newErrors.password='La contraseña debe tener entre 6 y 10 caracteres' ;
         } else {
             if (!REXPRESSIONS.TIENENUMERO.test(userData.password)) {
-                setErrors({ ...errors, password: 'La contraseña deberia tener por lo menos un numero' });
-            } else setErrors({ ...errors, password: '' });
+                newErrors.password='La contraseña deberia tener por lo menos un numero' ;
+            } else newErrors.password='';
         }
-
     }
+    
+    setErrors(newErrors);
 }
+
 export default validation;

@@ -62,3 +62,20 @@ $OverColor : black;
 .read-the-docs {
   color: #888;
 }
+
+input {
+  @include formatoBase();
+}
+
+input:focus {
+  // background-color: rgb(99, 163, 99);
+  color: $nameColor;
+  transform: scale(1.05);
+  box-shadow: 2px 2px 25px #969696,
+    -2px -2px 25px #ffffff;
+}
+
+input:hover {
+  border: 1px solid $OverColor;
+  transform: scale(1.05);
+}

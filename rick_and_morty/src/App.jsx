@@ -28,6 +28,8 @@ export default function App() {
       if (userData.email === EMAIL && userData.password == PASSWORD) {
          setAccess(true);
          navigate(SITEROUTES.HOME);
+      }else{
+         window.alert('Datos invalidos')
       }
    }
 
