@@ -3,6 +3,8 @@
     HOME: '/home',
     ABOUT: '/about',
     DETAIL: '/detail/:id',
-    FORM: '/'
+    FORM: '/',
+    FAVORITES: '/favorites',
+    LOGO: "../../src/assets/Rick_and_Morty.png" 
 };
 export default SITEROUTES

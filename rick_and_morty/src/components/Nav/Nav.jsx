@@ -10,7 +10,7 @@ export default function Nav(props) {
    return (
       <nav className={styles.Nav}>
          <div>
-            <img src="../../src/assets/logo.png" />
+            <img src={SITEROUTES.LOGO}/>
          </div>
          <div className={styles.SearchBar}>
             <SearchBar onSearch={onSearch} onRandom={onRandom} />
@@ -18,6 +18,9 @@ export default function Nav(props) {
          <div>
             <Link to={SITEROUTES.HOME}>
                <button>Home</button>
+            </Link>
+            <Link to={SITEROUTES.FAVORITES}>
+               <button>Favorites</button>
             </Link>
             <Link to={SITEROUTES.ABOUT}>
                <button>About</button>

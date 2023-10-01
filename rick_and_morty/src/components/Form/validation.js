@@ -1,14 +1,14 @@
 import React from 'react'
-import REXPRESSIONS from '../../helpers/rexpressions.helpers'
+import REGEXP from '../../helpers/regexp.helpers'
 
 const validation = (userData, errors, setErrors) => {
-    const newErrors={...errors}
+    const newErrors=errors
 
     // validar email
     if (!userData.email) {
         newErrors.email='Ingrese el Mail';
     } else {
-        if (!REXPRESSIONS.MAIL.test(userData.email)) {
+        if (!REGEXP.MAIL.test(userData.email)) {
             newErrors.email= 'El email no es valido';
         } else {
             if (userData.email.length > 35) {
@@ -23,7 +23,7 @@ const validation = (userData, errors, setErrors) => {
         if (userData.password.length < 6 || userData.password.length > 10) {
             newErrors.password='La contraseña debe tener entre 6 y 10 caracteres' ;
         } else {
-            if (!REXPRESSIONS.TIENENUMERO.test(userData.password)) {
+            if (!REGEXP.TIENENUMERO.test(userData.password)) {
                 newErrors.password='La contraseña deberia tener por lo menos un numero' ;
             } else newErrors.password='';
         }

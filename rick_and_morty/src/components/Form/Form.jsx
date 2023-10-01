@@ -10,8 +10,8 @@ export default function Form(props) {
 
     // Estado de los campos del form
     const [userData, setUserData] = useState({
-        email: "",
-        password: ""
+        email: "diegolepore01@gmail.com",
+        password: "987654"
     })
     // estados de error
     const [errors, setErrors] = useState({
@@ -37,7 +37,7 @@ export default function Form(props) {
         validation(userData, errors, setErrors)
     }, [])
     return (
-        <form >
+        <form onSubmit={handleSubmit}>
             <div className={styles.Form}>
                 <section className={styles.section}>
                     <label htmlFor="email">Mail:</label>
@@ -48,12 +48,12 @@ export default function Form(props) {
                 </section>
                 <section className={styles.section}>
                     <label htmlFor="password">Password:</label>
-                    <input type="text" name="password" value={userData.password} onChange={handleChange} />
+                    <input type="password" name="password" value={userData.password} onChange={handleChange} />
                     <Tooltip text={errors.password}>
                         <div class="divTooltip">{errors.password ? "❌" : "✅"}</div>
                     </Tooltip>    
                 </section>
-                <button onClick={handleSubmit}>Submit </button>
+                <button>Submit </button>
                 <Tooltip text={errors.password}>
                     <div class="divTooltip"></div>
                 </Tooltip>    

@@ -8,6 +8,7 @@ import Nav from './components/Nav/Nav.jsx';
 import Detail from './components/Detail/Detail.jsx'
 import About from './components/About/About.jsx'
 import Form from './components/Form/Form.jsx'
+import Favorites from './components/Favorites/Favorites';
 
 import SITEROUTES from './helpers/siteroutes.helpers'
 
@@ -105,6 +106,7 @@ export default function App() {
             <Route path={SITEROUTES.HOME} element={<Cards characters={characters} onClose={onClose} />} />
             <Route path={SITEROUTES.ABOUT} element={<About />} />
             <Route path={SITEROUTES.DETAIL} element={<Detail />} />
+            <Route path={SITEROUTES.FAVORITES} element={<Favorites characters={characters} onClose={onClose} />} />
          </Routes>
       </div>
    );
