@@ -18,7 +18,7 @@ const Card = (props) => {
          removeFav(id)
       } else {
          setIsFav(true)
-         addFav(id)
+         addFav(props)
       }
    }
 
@@ -29,7 +29,7 @@ const Card = (props) => {
 
    useEffect(() => {
       myFavorites.forEach((fav) => {
-         if (fav === props.id) {
+         if (fav.id=== props.id) {
             setIsFav(true);
          }
       });
@@ -77,7 +77,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
    return {
-      addFav: (id) => dispatch(addFav(id)),
+      addFav: (character) => dispatch(addFav(character)),
       removeFav: (id) => dispatch(removeFav(id))
    }
 }

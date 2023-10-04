@@ -10,8 +10,8 @@ export default function Form(props) {
 
     // Estado de los campos del form
     const [userData, setUserData] = useState({
-        email: "diegolepore01@gmail.com",
-        password: "987654"
+        email: "",
+        password: ""
     })
     // estados de error
     const [errors, setErrors] = useState({
