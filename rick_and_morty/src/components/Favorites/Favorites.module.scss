@@ -3,19 +3,19 @@ $cardBg : rgba(217, 217, 217, 0.58);
 $OverColor : black;
 
 @mixin formatoBase {
-  margin: 2px 3px 2px 8px;
-  border: none;
-  outline: none;
-  border-radius: 15px;
-  //    padding: 1em;
-  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.22);
-  backdrop-filter: blur(6px);
-  background: $cardBg;
-  border: 1px solid white;
-  height: 40px;
-  // width: 800px;
-  // background-color: #ccc;
-  transition: 300ms ease-in-out;
+    margin: 2px 3px 2px 8px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    //    padding: 1em;
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    background: $cardBg;
+    border: 1px solid white;
+    height: 40px;
+    // width: 800px;
+    // background-color: #ccc;
+    transition: 300ms ease-in-out;
 
 }
 
@@ -26,31 +26,30 @@ $OverColor : black;
     align-items: center;
     justify-content: center;
     padding: 1rem;
-  }
+}
 
 .Favorites select {
     @include formatoBase();
-  }
-  
+    
+}
+
 .Favorites select:focus {
     // background-color: rgb(99, 163, 99);
     color: $nameColor;
     transform: scale(1.05);
     box-shadow: 2px 2px 25px #969696,
-      -2px -2px 25px #ffffff;
-  }
-  
-  .Favorites select:hover {
+        -2px -2px 25px #ffffff;
+}
+
+.Favorites select:hover {
     border: 1px solid $OverColor;
     transform: scale(1.05);
-  }
+}
 
-.Favorites option{
+.Favorites select option {
     @include formatoBase();
     color: $nameColor;
     transform: scale(1.05);
-    border-radius: 15px;
-    
-
-}  
-  
+    border-radius: 55px;
+    font-size: 1.1rem;
+}

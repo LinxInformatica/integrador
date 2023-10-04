@@ -31,12 +31,12 @@ export default (state = initialState, action) => {
         case 'A':
           return {
             ...state,
-            myFavorites: [...state.allCharacters].sort((a, b) => a.id - b.id),
+            myFavorites: [...state.myFavorites].sort((a, b) => a.id - b.id),
           }
         case 'D':
           return {
             ...state,
-            myFavorites: [...state.allCharacters].sort((a, b) => b.id - a.id),
+            myFavorites: [...state.myFavorites].sort((a, b) => b.id - a.id),
           }
 
         default:
