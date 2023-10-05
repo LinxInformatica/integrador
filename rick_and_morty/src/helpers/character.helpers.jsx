@@ -1,5 +1,5 @@
 export const CHARACTERGENDER = {
-    ALL: 'All',
+    ALL: 'All Genders',
     MALE: 'Male',
     FEMALE: 'Female',
     GENDERLESS: 'Genderless',

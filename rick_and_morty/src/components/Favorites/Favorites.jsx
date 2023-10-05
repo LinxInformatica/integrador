@@ -42,17 +42,28 @@ const Favorites = (props) => {
     return (
         <div>
             <div className={styles.Favorites}>
-                    <select onChange={handleOrder}>
-                        <option value={CHARACTERORDER.A}>Ascendente</option>
-                        <option value={CHARACTERORDER.D}>Descendente</option>
-                    </select>
-                    <select onChange={handleFilter}>
-                        <option value={CHARACTERGENDER.ALL}>{CHARACTERGENDER.ALL}</option>
-                        <option value={CHARACTERGENDER.MALE}>{CHARACTERGENDER.MALE}</option>
-                        <option value={CHARACTERGENDER.FEMALE}>{CHARACTERGENDER.FEMALE}</option>
-                        <option value={CHARACTERGENDER.GENDERLESS}>{CHARACTERGENDER.GENDERLESS}</option>
-                        <option value={CHARACTERGENDER.UNKNOWN}>{CHARACTERGENDER.UNKNOWN}</option>
-                    </select>
+                <section>
+                    <button value='A' onClick={handleOrder}>Ascendente</button>
+                    <button value='D' onClick={handleOrder}>Descendente</button>
+                </section>
+                <section>
+                    <button value={CHARACTERGENDER.ALL} onClick={handleFilter}>{CHARACTERGENDER.ALL}</button>
+                    <button value={CHARACTERGENDER.MALE} onClick={handleFilter}>{CHARACTERGENDER.MALE}</button>
+                    <button value={CHARACTERGENDER.FEMALE} onClick={handleFilter}>{CHARACTERGENDER.FEMALE}</button>
+                    <button value={CHARACTERGENDER.GENDERLESS} onClick={handleFilter}>{CHARACTERGENDER.GENDERLESS}</button>
+                    <button value={CHARACTERGENDER.UNKNOWN} onClick={handleFilter}>{CHARACTERGENDER.UNKNOWN}</button>
+                </section>
+                {/* <select onChange={handleOrder}>
+                    <option value={CHARACTERORDER.A}>Ascendente</option>
+                    <option value={CHARACTERORDER.D}>Descendente</option>
+                </select>
+                <select onChange={handleFilter}>
+                    <option value={CHARACTERGENDER.ALL}>{CHARACTERGENDER.ALL}</option>
+                    <option value={CHARACTERGENDER.MALE}>{CHARACTERGENDER.MALE}</option>
+                    <option value={CHARACTERGENDER.FEMALE}>{CHARACTERGENDER.FEMALE}</option>
+                    <option value={CHARACTERGENDER.GENDERLESS}>{CHARACTERGENDER.GENDERLESS}</option>
+                    <option value={CHARACTERGENDER.UNKNOWN}>{CHARACTERGENDER.UNKNOWN}</option>
+                </select> */}
             </div>
             <div className={styles.Favorites}>
                 {
