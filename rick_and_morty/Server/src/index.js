@@ -1,30 +1,33 @@
 
 const http = require('http')
 
-const data = require("./util/data.js")
+const data = require("./utils/data.js")
 
+const CHARACTER="/rick_and_morty/character/"
 const URL = 'localhost'
 const PORT = 3001
 
-http.createServer(function (req, res) {
+http.createServer( (req, res) =>{
     //acceso cualqueir origen
-    console.log(`Server Activo en ${PORT}`)
-
     res.setHeader('Access-Control-Allow-Origin', '*');
 
+    console.log(`Server Activo en ... ${PORT}`)
 
     const { url } = req
-    if (url.includes("/rick_and_morty/character/")) {
-        //
+    if (url.includes(CHARACTER)) {
+        //                                                 rick_and_morty character 15
         //extraigo el id 
-        const urlId = Number(url.split('/')[3])
-        const character = data.filter((char) => char.id === urlId)
-        if (character.length===0) {
+        //el la url es /ryck_and_morty/character/id split por / y tomo el elemento 3
+        console.log(url)
+        const character = data.find((char) => char.id ===  Number(url.split('/')[3]))
+        console.log(character)
+        if (!character) {
             res.writeHead(404, { 'Content-Type': 'text/plain' })
             res.end("Personaje no encontrado");
         } else {
+            console.log(character[0])
             res.writeHead(200, { 'Content-Type': 'application/json' })
-            res.end(JSON.stringify(character[0]));
+            res.end(JSON.stringify(character));
         }
         return
     }
